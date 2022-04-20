@@ -1,0 +1,86 @@
+@charset "UTF-8";
+/*写真のalign➡それを含むタグでtext-align: center 写真のサイズ等➡写真タグ（img）で指定。*/
+/*タグ名の場合そのまま。 */
+
+/*全体>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>*/
+html {
+	font-family: sans-serif;
+}
+
+.wrapper {
+    margin-top: auto;
+    /* border: 1px solid rgb(15, 9, 9);  */
+ }
+ 
+ .centering {
+    text-align: center;
+ }
+
+
+
+
+/*1_>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>*/
+#otherrules {
+    margin-left: 30%;
+    margin-right: 30%;
+    border: 1px dotted black;
+}
+
+
+
+
+/*2_>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>*/
+.nav li {
+    display: inline;
+	list-style-type: none;/*箇条書きの黒ぽち　無し*/
+	margin: 0 auto;
+}
+
+.nav img{
+    width: 10%;
+}
+
+/*カード部分*/
+#cards {
+    display: flex;
+    justify-content: center;
+    margin-top: 1%;
+   /* border: 1px solid rgb(222, 21, 21);*/
+  }
+
+.card {
+    width: 20%;
+    height: 100%;
+    margin-right: 2%;
+    margin-left: 2%;
+    /*border: 1px solid rgb(40, 11, 156);*/
+}
+
+.picture img {
+    width: 100%;
+    cursor: pointer;
+    /*height: 200px;*/
+}
+
+.description {
+    width: 100%;
+    box-sizing: border-box;
+    /*border: 1px solid rgb(17, 188, 43);*/
+}
+
+.description p {
+    font-size: 0.8rem; /*ルート(<html>)のフォントサイズ＝各デバイスのデフォルトの0.8倍*/
+    color: dimgray;
+    text-align: center;
+}
+
+/*結果部分*/
+.results {
+    text-align: center;
+}
+
+#result {
+    font-size: 10rem;
+    text-align: center;
+    color:rgb(15, 9, 9);
+}

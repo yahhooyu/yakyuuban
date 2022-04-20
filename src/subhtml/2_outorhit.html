@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<title>野球盤</title>
+<link rel="stylesheet" href="style.css"><!--同じ階層にstyle.cssをいれとくこと-->
+</head>
+<body>
+<div class="wrapper">
+<!--↑ここまでコピペ↑bodyとwrapperで二重に囲むのは慣習-->
+    <h1>
+     <nav class="nav">
+			<ul>
+                <li><a href="1_action.html"><img src="img/back.png" alt="Back to start"></a></li>
+            </ul>
+		</nav>
+    </h1>
+    
+	<h1 class="centering">内野ゴロ or 内野安打</h1>
+	<div id="cards">
+
+		<div class="card" id="card-center">
+		  <div class="picture"><img src="img/outorhit_green.png" id="outorhit_green" alt="" onclick="trytry('outorhit_green')"></div>
+		  <div class="description">
+			<p>内野安打率1/2<br> 盗塁を宣言してて内野ゴロ→ヒット＆ランへ<br> ランナー詰まってて内野ゴロ→ダブルプレーへ</p>
+		  </div>
+		</div>
+		
+	</div>
+    
+    <div class='results'>
+    <p><span id="result"></span></p>
+    </div>
+    
+    <script>
+		function trytry(action){
+			img1 = document.getElementById("outorhit_green");
+			comment = document.getElementById("result");
+
+
+			if (action === "outorhit_green"){
+				img1.style.border = "solid 5px rgb(222, 21, 21)";
+				waiting(function(){
+					var t = Math.random();
+					if (t < 1/2){
+						comment.textContent = "内野安打";
+						comment.style.color = "blue";
+					} else {
+						comment.textContent = "内野ゴロ";
+						comment.style.color = "red";
+					}
+				});
+			}
+
+			
+		}	
+
+		function waiting(func){
+			comment = document.getElementById("result");
+			comment.textContent = "・";
+			window.setTimeout(function(){
+				comment.textContent = "・・";
+			}, 1000);
+			window.setTimeout(function(){
+				comment.textContent = "・・・";
+			}, 2000);
+			window.setTimeout(func, 3000);
+		}
+    </script>
+    
+    	<!--フッター-->
+	<footer class="footer">
+		</footer>
+	<!--フッターここまで-->
+</div>
+
+</body>
+</html>
